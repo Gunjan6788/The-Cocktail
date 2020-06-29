@@ -1,21 +1,21 @@
 window.addEventListener("load", function () {
     var xhr = new XMLHttpRequest()
-    xhr.open("GET", "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic")
+    xhr.open("GET", "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic")
     xhr.send()
     xhr.onload = function () {
         var response = JSON.parse(this.response)
         var arrayResponse = response["drinks"]
         alcoholicData(arrayResponse)
+        
     }
 })
 
-var id
 function alcoholicData(arrayResponse) {
     count = 0
-    console.log(arrayResponse)
+    
     arrayResponse.forEach(element => {
         if (count < 30) {
-            var alcoholic = document.getElementById("alcoholic")
+            var alcoholic = document.getElementById("nonAlcoholic")
 
             var div = document.createElement("div")
             var card = document.createElement("div")
@@ -27,9 +27,9 @@ function alcoholicData(arrayResponse) {
             alcoholic.appendChild(div)
             div.append(card)
             card.append(img, cardBody)
-            cardBody.append(button, p)
+            cardBody.append(button,p)
 
-            div.setAttribute("class", "col-lg-2 p-1")
+            div.setAttribute("class", "col-lg-2")
             card.setAttribute("class", "p-3")
             img.setAttribute("class", "img-fluid")
             p.setAttribute("class", "h5")
@@ -41,8 +41,9 @@ function alcoholicData(arrayResponse) {
 
             button.addEventListener("click",function(){
                 localStorage.setItem("id", button.id)
-                location.replace('/home/masai/Sprint-3/search.html')
+                location.replace('../indexes/index2.html')
             })
+
         }
         count++
     })
