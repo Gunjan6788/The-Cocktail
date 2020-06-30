@@ -34,7 +34,7 @@ function alcoholicData(arrayResponse) {
             img.setAttribute("class", "img-fluid")
             p.setAttribute("class", "h5")
             button.setAttribute("id", element.idDrink)
-            button.setAttribute("class", "btn btn-secondary  btn-lg btn-block")
+            button.setAttribute("class", "btn btn-info  btn-lg btn-block")
             img.src = element.strDrinkThumb
             p.textContent = element.strDrink
             button.textContent = "Get Details"
