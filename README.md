@@ -12,4 +12,7 @@ User can search different cocktails.
 To know better about project ,some images of project are shown below:
 
 <li>Home page</li>
-<img src="/public/img1.png"/>
+<img src="/resources/img3.png"/>
+
+<li>Detail of cocktail is available on this page.</li>
+<img src="/resources/img2.png"/>
